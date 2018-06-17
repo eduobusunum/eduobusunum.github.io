@@ -1,2 +1,8 @@
 h1 {
+  font-family: 'Font Name', serif;
+  font-size: 72px;
+}
+
+form {
+  align: center;
 }
