@@ -1,9 +1,9 @@
 h1 {
   font-family: 'Aldrich', serif;
   font-size: 72px;
-  margin: auto;
+  text-align: center;
 }
 
 form {
-  margin: auto;
+  text-align: center;
 }
