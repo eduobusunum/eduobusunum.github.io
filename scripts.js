@@ -1,22 +1,17 @@
-var codes = ["1515175", "74656", "123213"];
 var names = ["secrettunnel", "ihaveabadfeelingaboutthis", "sogood"];
+var codes = ["1515175", "74656", "123213"];
 
 String.prototype.replaceAt=function(index, replacement) {
     return this.substr(0, index) + replacement+ this.substr(index + replacement.length);
 }
 
-//on click submit -> check name & code validity; match; - if good open new page and create cookie, if not make both red
-//make the cookie
 var stateData = Cookies.get('progress');
-console.log(stateData);
 if (stateData == undefined){
   stateData='000';
-  console.log('a');
-  Cookies.set('progress', stateData);
+  Cookies.set('progress', stateData,  { expires: 365 });
 }
 
 function setClue() {
-  console.log(stateData)
   if (stateData=="100") {
     document.getElementById("line1").innerHTML="The URL for this website is not...";
   }
@@ -27,7 +22,6 @@ function setClue() {
     document.getElementById("line3").innerHTML="...about the location of the final prize.";
   }
   if (stateData=="011") {
-    console.log("I'm here");
     document.getElementById("line2").innerHTML="only the answer to a riddle but also a clue";
     document.getElementById("line3").innerHTML="about the location of the final prize.";
   }
@@ -84,14 +78,12 @@ function validateSubmit(){
       case 2:
         stateData = stateData.replaceAt(2,"1");
         window.open('https://eduobusunum.github.io/safePart.jpg', '_blank');}
-    console.log(stateData);
     Cookies.remove('progress');
-    Cookies.set('progress',stateData);
+    Cookies.set('progress',stateData,  { expires: 365 });
     setClue();
     }
   else{
     if (nameIndex==-1){
-      console.log('this');
       document.getElementById("name").style.color = "red";}
-    document.getElementById("code").style.color = "red"}
+      document.getElementById("code").style.color = "red"}
 }
