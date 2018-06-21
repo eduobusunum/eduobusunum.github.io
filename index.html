@@ -5,19 +5,20 @@
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
     <link href="https://fonts.googleapis.com/css?family=Aldrich" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
     <script src="scripts.js"></script>
   </head>
-  <body>
+  <body onload="setClue()">
     <h1>E DUOBUS UNUM</h1>
-    <span id="line1">1</span><br>
-    <span id="line2">2</span><br>
-    <span id="line3">3</span><br><br>
-    <form autocomplete="off" onsubmit="validateSubmit()">
+    <span id="line1"></span><br>
+    <span id="line2"></span><br>
+    <span id="line3"></span><br><br>
+    <form autocomplete="off">
       <fieldset>
-      <label>Safe Name:</label>  <input type="text" id="name" name="name" oninput="checkName()" value="">  <br><br>
-      <label>Safe Code:</label>  <input type="text" id="code" name="code" oninput="checkCode()" value="" > <br>
+      <label>Safe Name:</label>  <input type="text" id="name" name="name" oninput="checkInput()" value="">  <br><br>
+      <label>Safe Code:</label>  <input type="text" id="code" name="code" oninput="checkInput()" value="" > <br>
       <img class="safe" src="safePart.jpg">
-      <input type="submit" value="Submit">
+      <button  onclick="validateSubmit()" type="button">Submit</button>
     </fieldset>
     </form>
     <br>
