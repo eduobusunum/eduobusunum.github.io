@@ -1,5 +1,5 @@
 var names = ["secrettunnel", "ihaveabadfeelingaboutthis", "sogood"];
-var codes = ["1515175", "74656", "123213"];
+var codes = ["1515175", "74656", "123213","1515175210", "74656439", "123213678"];
 
 String.prototype.replaceAt=function(index, replacement) {
     return this.substr(0, index) + replacement+ this.substr(index + replacement.length);
@@ -65,19 +65,31 @@ function validateSubmit(){
   var nameIndex = names.indexOf(currentName);
   var currentCode = document.getElementById("code").value;
   var codeIndex = codes.indexOf(currentCode);
+  if (codeIndex>2){
+    nameIndex = nameIndex+3}
   if ((nameIndex==codeIndex) && nameIndex != -1){
     switch(nameIndex){
       case 0:
-        window.open('https://eduobusunum.github.io/hmb.jpg', '_blank');
+        window.open('https://eduobusunum.github.io/hmb.png', '_blank');
         stateData = stateData.replaceAt(0,"1");
         break;
       case 1:
-        window.open('https://eduobusunum.github.io/pmb.jpg', '_blank');
+        window.open('https://eduobusunum.github.io/pmb.png', '_blank');
         stateData = stateData.replaceAt(1,"1");
         break;
       case 2:
         stateData = stateData.replaceAt(2,"1");
-        window.open('https://eduobusunum.github.io/safePart.jpg', '_blank');}
+        window.open('https://eduobusunum.github.io/gcb.jpg', '_blank');
+        break;
+      case 3:
+        window.open('https://eduobusunum.github.io/hmg.png', '_blank');
+        break;
+      case 4:
+        window.open('https://eduobusunum.github.io/pmg.png', '_blank');
+        break;
+      case 5:
+        window.open('https://eduobusunum.github.io/gc2.jpg', '_blank');
+        break;}
     Cookies.remove('progress');
     Cookies.set('progress',stateData,  { expires: 365 });
     setClue();
