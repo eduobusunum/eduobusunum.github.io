@@ -16,14 +16,33 @@ if (stateData == undefined){
 }
 
 function setClue() {
-  if (stateData.charAt(0)==1) {
-    document.getElementById("line1").innerHTML="string1";
+  console.log(stateData)
+  if (stateData=="100") {
+    document.getElementById("line1").innerHTML="The URL for this website is not...";
   }
-  if (stateData.charAt(1)==1) {
-    document.getElementById("line2").innerHTML="string2";
+  if (stateData=="010") {
+    document.getElementById("line2").innerHTML="...only the answer to a riddle but also a clue...";
   }
-  if (stateData.charAt(2)==1) {
-    document.getElementById("line2").innerHTML="string2";
+  if (stateData=="001") {
+    document.getElementById("line3").innerHTML="...about the location of the final prize.";
+  }
+  if (stateData=="011") {
+    console.log("I'm here");
+    document.getElementById("line2").innerHTML="only the answer to a riddle but also a clue";
+    document.getElementById("line3").innerHTML="about the location of the final prize.";
+  }
+  if (stateData=="110") {
+    document.getElementById("line1").innerHTML="The URL for this website is not";
+    document.getElementById("line2").innerHTML="only the answer to a riddle but also a clue...";
+  }
+  if (stateData=="101") {
+    document.getElementById("line1").innerHTML="The URL for this website is not...";
+    document.getElementById("line3").innerHTML="...about the location of the final prize.";
+  }
+  if (stateData=="111") {
+    document.getElementById("line1").innerHTML="The URL for this website is not";
+    document.getElementById("line2").innerHTML="only the answer to a riddle but also a clue";
+    document.getElementById("line3").innerHTML="about the location of the final prize.";
   }
 }
 
@@ -66,13 +85,13 @@ function validateSubmit(){
         stateData = stateData.replaceAt(2,"1");
         window.open('https://eduobusunum.github.io/safePart.jpg', '_blank');}
     console.log(stateData);
-    document.getElementById("code").value = "";
-    document.getElementById("code").style.color = "black";
-    document.getElementById("name").value = "";
-    document.getElementById("name").style.color = "black";
+    Cookies.remove('progress');
+    Cookies.set('progress',stateData);
     setClue();
     }
   else{
-    document.getElementById("code").style.color = "red";
-    document.getElementById("name").style.color = "red"}
+    if (nameIndex==-1){
+      console.log('this');
+      document.getElementById("name").style.color = "red";}
+    document.getElementById("code").style.color = "red"}
 }
