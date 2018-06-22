@@ -1,5 +1,5 @@
 var names = ["secrettunnel", "ihaveabadfeelingaboutthis", "sogood"];
-var codes = ["1515175", "74656", "123213","1515175210", "74656439", "123213678"];
+var codes = ["1515175", "74656", "132213","1515175210", "74656439", "132213678"];
 
 String.prototype.replaceAt=function(index, replacement) {
     return this.substr(0, index) + replacement+ this.substr(index + replacement.length);
@@ -22,7 +22,7 @@ function setClue() {
     document.getElementById("line3").innerHTML="...about the location of the final prize.";
   }
   if (stateData=="011") {
-    document.getElementById("line2").innerHTML="only the answer to a riddle but also a clue";
+    document.getElementById("line2").innerHTML="...only the answer to a riddle but also a clue";
     document.getElementById("line3").innerHTML="about the location of the final prize.";
   }
   if (stateData=="110") {
